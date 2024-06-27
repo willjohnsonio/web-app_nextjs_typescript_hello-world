@@ -34,7 +34,13 @@ const config = {
       },
     },
   },
+  safelist: [
+    "aspect-square", "h-full", "w-full"
+  ],
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
 
 export default config
+
+
+// var(--dark-aluminium)
