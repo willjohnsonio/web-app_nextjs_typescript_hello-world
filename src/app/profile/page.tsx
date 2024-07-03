@@ -1,23 +1,13 @@
-import { ChevronLeftIcon } from "lucide-react";
-import { getSession } from "@auth0/nextjs-auth0";
-import UserProfile from "./components/user-profile";
-import { z } from "zod";
-import { ProfilePage } from "./user-profile-page";
+import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { ProfilePage } from "./components/profile";
 
-
-export default async function Profile() {
+export default withPageAuthRequired(async function Profile() {
   const session = await getSession();
   const user = session!.user;
 
   return (
-      
-    <ProfilePage
-    user={user}
-    
-    
-  />
-  
-      
-  
+    <div className="pt-10">
+      <ProfilePage user={user} />
+    </div>
   );
-}
+}, { returnTo: '/profile' })

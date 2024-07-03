@@ -4,6 +4,7 @@ import { PageLayout } from "@/components/page-layout";
 import { siteMetadata } from "@/components/page-head";
 import { PreloadResources } from "@/app/preload-resources";
 import { UserProvider } from "@auth0/nextjs-auth0/client"
+import { ThemeProvider } from "next-themes";
 
 export const metadata = siteMetadata;
 
@@ -13,7 +14,13 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
       <PreloadResources />
       <body>
         <UserProvider>
-          <PageLayout>{children}</PageLayout>
+          <PageLayout>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            disableTransitionOnChange
+          >{children}
+          </ThemeProvider></PageLayout>
         </UserProvider>
       </body>
     </html>

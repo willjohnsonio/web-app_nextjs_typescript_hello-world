@@ -1,11 +1,8 @@
-
-
 "use client";
 
 import { z } from "zod";
-
-import UserProfile from "./components/user-profile";
 import { Claims } from "@auth0/nextjs-auth0";
+import UserProfile from "@/components/auth0/user-profile";
 
 const languages = ["en-US", "es-AR"] as const;
 

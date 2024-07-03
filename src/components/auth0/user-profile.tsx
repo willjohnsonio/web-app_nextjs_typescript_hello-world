@@ -2,8 +2,8 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import useMfaEnrollment from "../../../hooks/use-mfa-enrollment";
-import useUserMetadata from "../../../hooks/use-user-metadata";
+import useMfaEnrollment from "./hooks/use-mfa-enrollment";
+import useUserMetadata from "./hooks/use-user-metadata";
 import BasicInfoForm from "./basic-info-form";
 /**
  * Make sure to install the MFAEnrollment component from:
