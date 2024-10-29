@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+import React from "react";
+
 import { usePathname, useSearchParams } from "next/navigation";
 
 interface NavigationEventsProps {
@@ -11,9 +13,9 @@ export const NavigationEvents: React.FC<NavigationEventsProps> = ({
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    closeMobileMenu();
-  }, [pathname, searchParams]);
+  // useEffect(() => {
+  //   closeMobileMenu();
+  // }, [pathname, searchParams]);
 
   return null;
 };
